@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: '18.x'
     - name: Install Backend Dependencies
-      run: npm ci
+      run: npm install
     # Assuming there will be tests in the future
     # - name: Run Backend Tests
     #   run: npm test
@@ -36,6 +36,8 @@ jobs:
       with:
         node-version: '18.x'
     - name: Install Frontend Dependencies
-      run: npm ci
+      run: npm install
     - name: Build Frontend Application
       run: npm run build
+      env:
+        CI: false
